@@ -9,17 +9,18 @@ import java.awt.Graphics2D;
 public class GamePanel extends JPanel implements Runnable{
 
 
-    Bloco[][] matrizJogo = new Bloco[30][25]; //20x20
     boolean mapeado, despausado, gameState = false;
 
     final int originalTiteSize = 12; // 12
-    final int scale = 3; // 3
+    final int scale = 1; // 3
 
     final int tileSize = originalTiteSize * scale;
-    final int maxScreenCol = 31; //21
-    final int maxScreenRow = 26; //21
+    final int maxScreenCol = 101; //21
+    final int maxScreenRow = 76; //21
     final int screenWidth = maxScreenCol * tileSize;
     final int screenHeight = maxScreenRow * tileSize;
+
+    Bloco[][] matrizJogo = new Bloco[maxScreenCol-1][maxScreenRow-1]; //20x20
 
     ClickHandler mouseH = new ClickHandler();
     KeyHandler keyH = new KeyHandler();
